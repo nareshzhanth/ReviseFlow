@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 96%;
+    --foreground: 220 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 20% 25%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 45%;
+    --destructive: 0 72% 51%;
+    --border: 220 14% 86%;
+    --input: 220 14% 86%;
+    --success: 142 60% 40%;
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 40 20% 92%;
+    --card: 220 18% 10%;
+    --card-foreground: 40 20% 92%;
+    --primary: 38 92% 55%;
+    --primary-foreground: 220 20% 7%;
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 40 15% 80%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 10% 50%;
+    --destructive: 0 72% 51%;
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --success: 142 60% 45%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    font-family: "Inter", sans-serif;
+  }
+
+  body {
+    @apply antialiased;
+    margin: 0;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  button,
+  input {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+
+  .bg-card\/80 {
+    background-color: hsl(var(--card) / 0.8);
+  }
+
+  .bg-card\/90 {
+    background-color: hsl(var(--card) / 0.9);
+  }
+
+  .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+
+  .bg-primary\/10 {
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  .bg-primary\/15 {
+    background-color: hsl(var(--primary) / 0.15);
+  }
+
+  .bg-primary\/20 {
+    background-color: hsl(var(--primary) / 0.2);
+  }
+
+  .text-primary {
+    color: hsl(var(--primary));
+  }
+
+  .text-primary-foreground {
+    color: hsl(var(--primary-foreground));
+  }
+
+  .bg-secondary {
+    background-color: hsl(var(--secondary));
+  }
+
+  .bg-secondary\/50 {
+    background-color: hsl(var(--secondary) / 0.5);
+  }
+
+  .bg-secondary\/60 {
+    background-color: hsl(var(--secondary) / 0.6);
+  }
+
+  .text-secondary-foreground {
+    color: hsl(var(--secondary-foreground));
+  }
+
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .border-border\/50 {
+    border-color: hsl(var(--border) / 0.5);
+  }
+
+  .text-destructive {
+    color: hsl(var(--destructive));
+  }
+
+  .text-success {
+    color: hsl(var(--success));
+  }
+
+  .bg-success\/15 {
+    background-color: hsl(var(--success) / 0.15);
+  }
+
+  .bg-destructive\/15 {
+    background-color: hsl(var(--destructive) / 0.15);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3);
+  }
+
+  .fade-up {
+    animation: fadeUp 0.5s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+#root {
+  @apply min-h-screen;
+}
